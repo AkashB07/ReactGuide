@@ -1,17 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
 import "./ExpenseDetails.css";
 
 function ExpenseDetails(props) {
+  const [title, setTitle] = useState(props.title);
   const clickHandler = () => {
-    console.log('Clicked!!')
-  }
+    setTitle('Updated!');
+    console.log(title);
+  };
+
+  const [amount, setAmount] = useState(props.amount);
+  const editAmount = () => {
+    setAmount(100);
+    console.log(amount);
+  };
+
   return (
     <div className="expense-item__description">
-      <h2>{props.title}</h2>
-      <h2>{props.location}</h2>
-      <div className="expense-item__price">Rs {props.amount}</div>
+      <h2>{title}</h2>
+      <div className="expense-item__price">Rs {amount}</div>
       <button onClick={clickHandler}>Change Title</button>
-      <button>Delete Expense</button>
+      <button onClick={editAmount}>Change Amount</button>
     </div>
    
   );
