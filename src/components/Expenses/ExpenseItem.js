@@ -5,10 +5,12 @@ import Card from "../UI/Card";
 
 function ExpenseItem(props) {
   return (
-    <Card className="expense-item">
-      <ExpenseDate date={props.date} />
-      <ExpenseDetails title={props.title} amount= {props.amount}/>
-    </Card>
+    <li>
+      <Card className="expense-item">
+        <ExpenseDate date={props.date} />
+        <ExpenseDetails title={props.title} amount={props.amount} />
+      </Card>
+    </li>
   );
 }
 
